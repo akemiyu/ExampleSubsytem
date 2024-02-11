@@ -8,17 +8,33 @@ public final class Constants {
   public static class IntakeConstants {
     public static final int m1Id = 0;
     public static final int m2Id = 1;
-  
-    public static enum IntakeState {
+    public static final int m3Id = 2;
+
+    public static enum RollerState {
       INTAKE(0.5),
       OUTTAKE(-0.5),
       OFF(0);
 
       public final double speed;
-      IntakeState(double speed) {
+      RollerState(double speed) {
         this.speed = speed;
       }
     }
+
+    public static enum ArmState {
+      HIGH(0),
+      LOW(0),
+      NEUTRAL(0);
+
+      public final double pos;
+      ArmState(double pos) {
+        this.pos = pos;
+      }
+    }
+
+    public static final double armkP = 0;
+    public static final double armkI = 0;
+    public static final double armkD = 0;
   }
 
   public static class JoystickConstants {
