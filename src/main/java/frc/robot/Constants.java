@@ -44,4 +44,42 @@ public final class Constants {
       public static final int outtake = 2;
     }
   }
+
+  public static class ShooterConstants {
+    public static final int motor1ID = 8;
+    public static final int motor2ID = 12;
+    public static final int feederMotorID = 16;
+    public static final int angleMotorID = 20;
+
+    public static final double kP = 0;
+    public static final double kI = 0;
+    public static final double kD = 0;
+
+    public static enum AngleState {
+      HIGH(0),
+      LOW(0);
+
+      public final double pos;
+      AngleState(double pos) {
+        this.pos = pos;
+      }
+    }
+
+    public static enum ShooterState {
+      SHOOT(0.8, 0.4, 0.2),
+      REVERSE(-0.2, -0.2, -0.2),
+      FEED(0, 0, 0.2),
+      OFF(0, 0, 0);
+
+      public double speed1;
+      public double speed2;
+      public double feederSpeed;
+
+      private ShooterState(double speed1, double speed2, double feederSpeed) {
+        this.speed1 = speed1;
+        this.speed2 = speed2;
+        this.feederSpeed = feederSpeed;
+      }
+    }
+  }
 }
